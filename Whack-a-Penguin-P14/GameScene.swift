@@ -19,7 +19,6 @@ class GameScene: SKScene {
             gameScore.text = "Score: \(score)"
         }
     }
-    
 
     override func didMove(to view: SKView) {
         let background = SKSpriteNode(imageNamed: "whackBackground")
@@ -40,34 +39,41 @@ class GameScene: SKScene {
         for i in 0..<5 { createSlot(at: CGPoint(x: 100 + (i * 170), y: 230))}
         for i in 0..<4 { createSlot(at: CGPoint(x: 180 + (i * 170), y: 140))}
         
-        DispatchQueue.main.asyncAfter(deadline: .now() + 1) { [weak self] in
-            self?.createEnemy()
+        DispatchQueue.main.asyncAfter(deadline: .now() + 1) { [unowned self] in
+            self.createEnemy()
         }
-
-      
     }
 
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
-        guard let touch = touches.first else { return}
-        let location = touch.location(in: self)
-        let tappedNodes = nodes(at: location)
-        
-        for node in tappedNodes {
-            guard let whackSlot = node.parent?.parent as? WhackSlot else { continue }
-            if !whackSlot.isVisible { continue }
-            if whackSlot.isHit { continue }
-            whackSlot.hit()
-
+        if let touch = touches.first {
+            let location = touch.location(in: self)
+            let tappedNodes = nodes(at: location)
             
-            if node.name == "charFriend" {
-                score -= 5
-                run(SKAction.playSoundFileNamed("whackBad.caf", waitForCompletion: false))
-            } else if node.name == "charEnemy" {
-                whackSlot.charNode.xScale = 0.85
-                whackSlot.charNode.yScale = 0.85
-                score += 1
-                
-                run(SKAction.playSoundFileNamed("whack.caf", waitForCompletion: false))
+            for node in tappedNodes {
+                if node.name == "charFriend" {
+                    // they shouldn't have whacked this penguin
+                    let whackSlot = node.parent!.parent as! WhackSlot
+                    if !whackSlot.isVisible { continue }
+                    if whackSlot.isHit { continue }
+                    
+                    whackSlot.hit()
+                    score -= 5
+                    
+                    run(SKAction.playSoundFileNamed("whackBad.caf", waitForCompletion:false))
+                } else if node.name == "charEnemy" {
+                    // they should have whacked this one
+                    let whackSlot = node.parent!.parent as! WhackSlot
+                    if !whackSlot.isVisible { continue }
+                    if whackSlot.isHit { continue }
+                    
+                    whackSlot.charNode.xScale = 0.85
+                    whackSlot.charNode.yScale = 0.85
+                    
+                    whackSlot.hit()
+                    score += 1
+                    
+                    run(SKAction.playSoundFileNamed("whack.caf", waitForCompletion:false))
+                }
             }
         }
     }
