@@ -13,6 +13,7 @@
 		10A1413126B7F2E200625F34 /* GameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10A1413026B7F2E200625F34 /* GameViewController.swift */; };
 		10A1413426B7F2E200625F34 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 10A1413226B7F2E200625F34 /* Main.storyboard */; };
 		10A1413626B7F2E600625F34 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 10A1413526B7F2E600625F34 /* Assets.xcassets */; };
+		10A1414426B7FB1500625F34 /* WhackSlot.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10A1414326B7FB1500625F34 /* WhackSlot.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +25,9 @@
 		10A1413326B7F2E200625F34 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		10A1413526B7F2E600625F34 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		10A1413726B7F2E600625F34 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		10A1414026B7F49D00625F34 /* whack.caf */ = {isa = PBXFileReference; lastKnownFileType = file; path = whack.caf; sourceTree = "<group>"; };
+		10A1414126B7F49D00625F34 /* whackBad.caf */ = {isa = PBXFileReference; lastKnownFileType = file; path = whackBad.caf; sourceTree = "<group>"; };
+		10A1414326B7FB1500625F34 /* WhackSlot.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WhackSlot.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -59,10 +63,13 @@
 				10A1412826B7F2E200625F34 /* AppDelegate.swift */,
 				10A1412A26B7F2E200625F34 /* GameScene.sks */,
 				10A1412E26B7F2E200625F34 /* GameScene.swift */,
+				10A1414326B7FB1500625F34 /* WhackSlot.swift */,
 				10A1413026B7F2E200625F34 /* GameViewController.swift */,
 				10A1413226B7F2E200625F34 /* Main.storyboard */,
 				10A1413526B7F2E600625F34 /* Assets.xcassets */,
 				10A1413726B7F2E600625F34 /* Info.plist */,
+				10A1414026B7F49D00625F34 /* whack.caf */,
+				10A1414126B7F49D00625F34 /* whackBad.caf */,
 			);
 			path = "Whack-a-Penguin-P14";
 			sourceTree = "<group>";
@@ -139,6 +146,7 @@
 			files = (
 				10A1412F26B7F2E200625F34 /* GameScene.swift in Sources */,
 				10A1413126B7F2E200625F34 /* GameViewController.swift in Sources */,
+				10A1414426B7FB1500625F34 /* WhackSlot.swift in Sources */,
 				10A1412926B7F2E200625F34 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
