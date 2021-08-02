@@ -9,6 +9,7 @@ import SpriteKit
 
 class GameScene: SKScene {
     var gameScore:SKLabelNode!
+    var endScore:SKLabelNode!
     var slots = [WhackSlot]()
     
     var popupTime = 0.85
@@ -49,12 +50,18 @@ class GameScene: SKScene {
             let location = touch.location(in: self)
             let tappedNodes = nodes(at: location)
             
+            
             for node in tappedNodes {
                 if node.name == "charFriend" {
                     // they shouldn't have whacked this penguin
                     let whackSlot = node.parent!.parent as! WhackSlot
                     if !whackSlot.isVisible { continue }
                     if whackSlot.isHit { continue }
+                    if let smokeEffect = SKEmitterNode(fileNamed: "smoke") {
+                        smokeEffect.position = whackSlot.position
+                        smokeEffect.zPosition = 2
+                        addChild(smokeEffect)
+                    }
                     
                     whackSlot.hit()
                     score -= 5
@@ -68,6 +75,11 @@ class GameScene: SKScene {
                     
                     whackSlot.charNode.xScale = 0.85
                     whackSlot.charNode.yScale = 0.85
+                    if let smokeEffect = SKEmitterNode(fileNamed: "spark") {
+                        smokeEffect.position = whackSlot.position
+                        addChild(smokeEffect)
+                        smokeEffect.zPosition = 2
+                    }
                     
                     whackSlot.hit()
                     score += 1
@@ -96,6 +108,15 @@ class GameScene: SKScene {
             let gameOver = SKSpriteNode(imageNamed: "gameOver")
             gameOver.position = CGPoint(x: 512, y: 384)
             gameOver.zPosition = 1
+            run(SKAction.playSoundFileNamed("whack.caf", waitForCompletion:false))
+            
+            endScore = SKLabelNode(fontNamed: "Chalkduster")
+            endScore.text = "Score: \(score)"
+            endScore.position = CGPoint(x: 512, y: 300)
+            endScore.fontSize = 48
+            endScore.zPosition = 3
+            
+            addChild(endScore)
             addChild(gameOver)
             return
         }
