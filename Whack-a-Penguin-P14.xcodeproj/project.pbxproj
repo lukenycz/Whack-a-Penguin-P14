@@ -28,6 +28,9 @@
 		10A1418526B82CCB00625F34 /* whackBackground@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 10A1417726B82CCB00625F34 /* whackBackground@2x.png */; };
 		10A1418626B82CCB00625F34 /* whackBad.caf in Resources */ = {isa = PBXBuildFile; fileRef = 10A1417826B82CCB00625F34 /* whackBad.caf */; };
 		10A1418726B82CCB00625F34 /* gameOver@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 10A1417926B82CCB00625F34 /* gameOver@2x.png */; };
+		10A1418C26B8325000625F34 /* smoke.sks in Resources */ = {isa = PBXBuildFile; fileRef = 10A1418A26B8325000625F34 /* smoke.sks */; };
+		10A1418D26B8325000625F34 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 10A1418B26B8325000625F34 /* Assets.xcassets */; };
+		10A1419426B832FE00625F34 /* spark.sks in Resources */ = {isa = PBXBuildFile; fileRef = 10A1419326B832FE00625F34 /* spark.sks */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -54,6 +57,9 @@
 		10A1417726B82CCB00625F34 /* whackBackground@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "whackBackground@2x.png"; sourceTree = "<group>"; };
 		10A1417826B82CCB00625F34 /* whackBad.caf */ = {isa = PBXFileReference; lastKnownFileType = file; path = whackBad.caf; sourceTree = "<group>"; };
 		10A1417926B82CCB00625F34 /* gameOver@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "gameOver@2x.png"; sourceTree = "<group>"; };
+		10A1418A26B8325000625F34 /* smoke.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = smoke.sks; sourceTree = "<group>"; };
+		10A1418B26B8325000625F34 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		10A1419326B832FE00625F34 /* spark.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = spark.sks; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -116,6 +122,9 @@
 				10A1417226B82CCB00625F34 /* whackHole@2x.png */,
 				10A1416F26B82CCB00625F34 /* whackMask.png */,
 				10A1416C26B82CCB00625F34 /* whackMask@2x.png */,
+				10A1418A26B8325000625F34 /* smoke.sks */,
+				10A1419326B832FE00625F34 /* spark.sks */,
+				10A1418B26B8325000625F34 /* Assets.xcassets */,
 			);
 			path = Content;
 			sourceTree = SOURCE_ROOT;
@@ -178,12 +187,15 @@
 			buildActionMask = 2147483647;
 			files = (
 				10A1418126B82CCB00625F34 /* penguinGood@2x.png in Resources */,
+				10A1418C26B8325000625F34 /* smoke.sks in Resources */,
 				10A1413426B7F2E200625F34 /* Main.storyboard in Resources */,
+				10A1418D26B8325000625F34 /* Assets.xcassets in Resources */,
 				10A1418526B82CCB00625F34 /* whackBackground@2x.png in Resources */,
 				10A1418326B82CCB00625F34 /* gameOver.png in Resources */,
 				10A1412B26B7F2E200625F34 /* GameScene.sks in Resources */,
 				10A1413626B7F2E600625F34 /* Assets.xcassets in Resources */,
 				10A1418226B82CCB00625F34 /* whackBackground.png in Resources */,
+				10A1419426B832FE00625F34 /* spark.sks in Resources */,
 				10A1417A26B82CCB00625F34 /* whackMask@2x.png in Resources */,
 				10A1418726B82CCB00625F34 /* gameOver@2x.png in Resources */,
 				10A1417D26B82CCB00625F34 /* whackMask.png in Resources */,
